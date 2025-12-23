@@ -1,11 +1,10 @@
-import Greeting from "./components/Greeting"
+import UserInfo from "./components/UserInfo"
 import ProductInfo from "./components/ProductInfo"
-
 
 const App = () => {
   return (
     <div>
-      <Greeting />
+      <UserInfo />
       <ProductInfo />
     </div>
   )
