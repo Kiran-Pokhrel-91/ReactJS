@@ -1,13 +1,11 @@
-import Weather from "./components/Weather"
-import UserStatus from "./components/UserStatus"
-import Greeting from "./components/Greeting"
+import Todo from "./components/Todo"
+import CartCount from "./components/CartCount"
 
 const App = () => {
   return (
     <div>
-      <Weather temprature={10} />
-      <UserStatus loggedIn={true} isAdmin={false} />
-      <Greeting timeOfDay="morning" />
+      <CartCount />
+      <Todo />
     </div>
   )
 } 
