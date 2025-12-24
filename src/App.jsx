@@ -1,11 +1,11 @@
-import UserInfo from "./components/UserInfo"
-import ProductInfo from "./components/ProductInfo"
+import Person from "./components/Person"
+import Product from "./components/Product"
 
 const App = () => {
   return (
     <div>
-      <UserInfo />
-      <ProductInfo />
+      <Person />
+      <Product />
     </div>
   )
 } 
