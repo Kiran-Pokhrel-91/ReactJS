@@ -1,22 +1,40 @@
 import { useState } from "react";
+import PopUp from "./PopUp";
 
 const Todo = () => {
   const today = new Date().toISOString().split("T")[0];
+
   const [task, setTask] = useState("");
   const [date, setDate] = useState(today);
   const [tasks, setTasks] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+
+  const tiggerPopup = (message) => {
+    setPopupMessage(message);
+    setShowPopup(true)
+    setTimeout(() => setShowPopup(false), 2000);
+  }
 
   const addTask = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     if (task.trim() === "") return;
+
     const newTask = { task, date };
     setTasks((prevTasks) => [...prevTasks, newTask]);
+
     setTask("");
     setDate(today);
+
+    tiggerPopup("Task added successfullt ✔️")
   };
 
   const removeTask = (index) => {
-    setTasks((prevTasks) => prevTasks.filter((_, i) => i !== index));
+    setTasks((prevTasks) =>
+      prevTasks.filter((_, i) => i !== index)
+    );
+
+    tiggerPopup("Task Deleted Successfully ❌")
   };
 
   return (
@@ -52,6 +70,8 @@ const Todo = () => {
           </li>
         ))}
       </ul>
+
+      <PopUp showPopup={showPopup} popupMessage={popupMessage}/>
     </div>
   );
 };
