@@ -1,20 +1,13 @@
 import { useState, useEffect } from "react";
 
 function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(()=>{
+    const initialCount = 0;
+    return initialCount;
+  });
 
-  const incCount = () => setCount(count + 1);
-  const decCount = () => setCount(count > 0 ? count - 1 : 0);
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "+") incCount();
-      if (e.key === "-") decCount();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [count]);
-
+  const incCount = () => setCount((prevCount) => prevCount + 1);
+  const decCount = () => setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
   
   return (
     <div>
