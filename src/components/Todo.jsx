@@ -12,9 +12,9 @@ const Todo = () => {
 
   const tiggerPopup = (message) => {
     setPopupMessage(message);
-    setShowPopup(true)
+    setShowPopup(true);
     setTimeout(() => setShowPopup(false), 2000);
-  }
+  };
 
   const addTask = (e) => {
     e.preventDefault();
@@ -26,15 +26,13 @@ const Todo = () => {
     setTask("");
     setDate(today);
 
-    tiggerPopup("Task added successfullt ✔️")
+    tiggerPopup("Task added successfullt ✔️");
   };
 
   const removeTask = (index) => {
-    setTasks((prevTasks) =>
-      prevTasks.filter((_, i) => i !== index)
-    );
+    setTasks((prevTasks) => prevTasks.filter((_, i) => i !== index));
 
-    tiggerPopup("Task Deleted Successfully ❌")
+    tiggerPopup("Task Deleted Successfully ❌");
   };
 
   return (
@@ -71,7 +69,7 @@ const Todo = () => {
         ))}
       </ul>
 
-      <PopUp showPopup={showPopup} popupMessage={popupMessage}/>
+      <PopUp showPopup={showPopup} popupMessage={popupMessage} />
     </div>
   );
 };

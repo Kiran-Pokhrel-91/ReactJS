@@ -1,3 +1,5 @@
+import { createPortal } from "react-dom";
+
 const PopUp = ({ showPopup, popupMessage }) => {
   if (!showPopup) return null;
   const popupStyle = {
@@ -18,7 +20,10 @@ const PopUp = ({ showPopup, popupMessage }) => {
     transition: "opacity 0.5s ease, transform 0.5s ease",
   };
 
-  return <section style={popupStyle}>{popupMessage}</section>;
+  return createPortal(
+    <section style={popupStyle}>{popupMessage}</section>,
+    document.querySelector("#popup-content"),
+  );
 };
 
 export default PopUp;
