@@ -58,7 +58,7 @@ const Todo = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl shadow-2xl">
+    <div className="max-w-lg mx-auto mt-10 p-6 bg-linear-to-br from-indigo-50 to-indigo-100 rounded-2xl shadow-2xl">
       {/* Header */}
       <h1 className="text-3xl font-bold text-indigo-700 mb-5 text-center">
         My Todo List
