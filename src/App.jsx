@@ -1,9 +1,9 @@
-import Todo from "./components/Todo"
+import ColorChanger from "./components/ColorChanger"
 
 const App = () => {
   return (
     <div>
-      <Todo />
+      <ColorChanger />
     </div>
   )
 } 
