@@ -1,9 +1,11 @@
-import ColorChanger from "./components/ColorChanger"
+import Cart from "./components/Cart"
+import Product from "./components/Product"
+import Shop from "./components/Shop"
 
 const App = () => {
   return (
     <div>
-      <ColorChanger />
+      <Shop />
     </div>
   )
 } 
